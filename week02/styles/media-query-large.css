@@ -6,7 +6,7 @@
     
     header {
         margin: 1rem auto;
-        border: px solid #bbb;
+        border: 1px solid #bbb;
         padding: 1rem;
         background-color: darkblue;
         color: #eeebd8;
@@ -14,7 +14,7 @@
     main,
     footer {
         margin: 1rem auto;
-        border: px solid #bbb;
+        border: 1px solid #bbb;
         padding: 1rem;
         background-color: #e6f2ff;
     }
