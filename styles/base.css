@@ -1,5 +1,7 @@
 /* ==== GLOBAL STYLES ==== */
 body {
+    font-family: "Roboto Flex", sans-serif;
+    font-weight: 400;
     margin: 0;
     display: grid;
     height: 100vh;
@@ -14,25 +16,40 @@ h1 {
 
 /* ==== HEADER ==== */
 header {
+    
     background-color: blue;
     padding-top: 20px;
     grid-column: 1 / 3;
     text-align: center;
     color: #eeebd8;
 }
-
+header span {
+    font-weight: 100;
+}
 /* Course title inside header */
 #course-title {
     font-size: 32px;
 }
 
 /* ==== NAVIGATION BAR ==== */
-.navbar {
+.navBar {
     display: flex;
     justify-content: space-around;
-    background-color: yellow;
+    background-color: darkblue;
     margin-top: 20px;
     padding: 10px 0px;
+}
+
+.navBar a {
+    text-decoration: none;
+    color: yellow;
+}
+
+.navBar a:hover {
+    color: blue;
+    background-color: yellow;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 /* ==== LEFT SECTION CONTAINER ==== */
@@ -45,7 +62,6 @@ header {
     gap: 10px;
     padding: 20px;
     margin: 20px 0px 20px 20px;
-    background-color: aqua;
 }
 
 /* Title bar inside left section */
@@ -68,6 +84,7 @@ header {
     text-indent: 40px;
     grid-column: 1 / 4;
     grid-row: 2;
+    padding: 10px;
 }
 
 /* Image (col 4) on row 2 */
@@ -83,12 +100,13 @@ header {
 
 /* Name heading (cols 1–3) on row 3 */
 .name {
+    font-weight: 100;
     grid-column: 1 / 4;
     grid-row: 3;
     text-align: center;
     margin: 0 0 0 -20px;
     line-height: 60px;
-    background-color: white;
+    background-color: aqua;
 }
 
 /* Flag image (col 1) on row 4 */
@@ -107,28 +125,21 @@ header {
     text-indent: 40px;
     grid-column: 2 / 4;
     grid-row: 4;
+    padding: 10px;
 }
 
 /* ==== RIGHT SECTION CONTAINER ==== */
+
 .right {
     display: flex;
     flex-direction: column;
-    background-color: violet;
-    margin: 20px 20px 20px 0px;
-}
-.right {
-    display: flex;
-    flex-direction: column;
-    background-color: violet;
+    background-color: aqua;
     margin: 20px 20px 20px 0px;
     grid-column: 2;
     grid-row: 2;
 }
 
 /* Paragraph styling in right section */
-.right p {
-    color: yellow;
-}
 
 .sectionTitleRight {
     height: 40px;
@@ -158,96 +169,14 @@ header {
     padding: 20px;
     border: 2px solid darkblue;
     border-radius: 10px;
-    /* padding-bottom: 20px; */
-    /* Optional: remove if redundant */
 }
 
 /* ==== FOOTER ==== */
 footer {
-    background-color: chartreuse;
+    background-color: darkblue;
+    color: yellow;
     padding: 1rem;
     text-align: center;
     grid-column: 1 / 3;
 }
 
-/* ============================
-   📱 Responsive Design
-=============================== */
-
-/* Medium screens (tablets) */
-@media screen and (max-width: 600px) {
-    .left {
-        grid-template-columns: 1fr;
-        /* 1 colonne */
-        grid-template-rows: auto;
-    }
-
-    .sectionTitleLeft,
-    .intro,
-    .portrait,
-    .name,
-    .flag,
-    .country {
-        grid-column: 1 !important;
-        /* S'assurer qu’ils occupent toute la largeur */
-        grid-row: auto;
-    }
-
-    .flag {
-        justify-self: center;
-        align-self: center;
-        width: 100%;
-        /* L’image occupe toute la largeur */
-    }
-
-    .flag img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        display: block;
-    }
-
-    .country {
-        text-indent: 20px;
-        margin-top: 10px;
-        /* Pour espacer du drapeau */
-    } 
-}
-
-/* small screens (mobile) */
-@media screen and (max-width: 600px) {
-    body {
-        display: block;
-        height: auto;
-    }
-
-    .left,
-    .right {
-        width: 100%;
-        margin: 10px 0;
-    }
-
-    .left {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-
-    .sectionTitleLeft,
-    .sectionTitleRight {
-        margin: 10px;
-        border-radius: 0;
-    }
-
-    .right {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 60vh;
-    }
-
-    .resourceList {
-        justify-content: center;
-        align-items: center;
-    } 
-}
