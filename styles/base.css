@@ -1,0 +1,253 @@
+/* ==== GLOBAL STYLES ==== */
+body {
+    margin: 0;
+    display: grid;
+    height: 100vh;
+    grid-template: auto 1fr auto / 4fr 2fr;
+    /* Header | Main Content | Footer */
+    column-gap: 20px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+/* ==== HEADER ==== */
+header {
+    background-color: blue;
+    padding-top: 20px;
+    grid-column: 1 / 3;
+    text-align: center;
+    color: #eeebd8;
+}
+
+/* Course title inside header */
+#course-title {
+    font-size: 32px;
+}
+
+/* ==== NAVIGATION BAR ==== */
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    background-color: yellow;
+    margin-top: 20px;
+    padding: 10px 0px;
+}
+
+/* ==== LEFT SECTION CONTAINER ==== */
+.left {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    /* 4 equal columns */
+    grid-template-rows: 40px auto 60px auto;
+    /* Title | Intro + Image | Name | Flag + Country */
+    gap: 10px;
+    padding: 20px;
+    margin: 20px 0px 20px 20px;
+    background-color: aqua;
+}
+
+/* Title bar inside left section */
+.sectionTitleLeft {
+    grid-column: 1 / 5;
+    grid-row: 1;
+    text-align: center;
+    margin: -20px -20px 0px -20px;
+    line-height: 40px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: blue;
+    font-size: 24px;
+    color: #eeebd8;
+}
+
+/* Paragraph (cols 1–3) on row 2 */
+.intro {
+    text-indent: 40px;
+    grid-column: 1 / 4;
+    grid-row: 2;
+}
+
+/* Image (col 4) on row 2 */
+.portrait {
+    grid-column: 4;
+    grid-row: 2;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    justify-self: center;
+    align-self: center;
+}
+
+/* Name heading (cols 1–3) on row 3 */
+.name {
+    grid-column: 1 / 4;
+    grid-row: 3;
+    text-align: center;
+    margin: 0 0 0 -20px;
+    line-height: 60px;
+    background-color: white;
+}
+
+/* Flag image (col 1) on row 4 */
+.flag {
+    grid-column: 1;
+    grid-row: 4;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    justify-self: center;
+    align-self: center;
+}
+
+/* Country description (cols 2–3) on row 4 */
+.country {
+    text-indent: 40px;
+    grid-column: 2 / 4;
+    grid-row: 4;
+}
+
+/* ==== RIGHT SECTION CONTAINER ==== */
+.right {
+    display: flex;
+    flex-direction: column;
+    background-color: violet;
+    margin: 20px 20px 20px 0px;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    background-color: violet;
+    margin: 20px 20px 20px 0px;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Paragraph styling in right section */
+.right p {
+    color: yellow;
+}
+
+.sectionTitleRight {
+    height: 40px;
+    line-height: 40px;
+    margin: -20px -20px 0 -20px;
+    padding: 10px;
+    background-color: blue;
+    color: #eeebd8;
+    font-size: 24px;
+    text-align: center;
+    word-break: break-word;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px; 
+}
+
+.resourceList {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    list-style-type: circle;
+    flex-direction: column;
+}
+
+
+/* ==== CARD BASE STYLE ==== */
+.card {
+    padding: 20px;
+    border: 2px solid darkblue;
+    border-radius: 10px;
+    /* padding-bottom: 20px; */
+    /* Optional: remove if redundant */
+}
+
+/* ==== FOOTER ==== */
+footer {
+    background-color: chartreuse;
+    padding: 1rem;
+    text-align: center;
+    grid-column: 1 / 3;
+}
+
+/* ============================
+   📱 Responsive Design
+=============================== */
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 600px) {
+    .left {
+        grid-template-columns: 1fr;
+        /* 1 colonne */
+        grid-template-rows: auto;
+    }
+
+    .sectionTitleLeft,
+    .intro,
+    .portrait,
+    .name,
+    .flag,
+    .country {
+        grid-column: 1 !important;
+        /* S'assurer qu’ils occupent toute la largeur */
+        grid-row: auto;
+    }
+
+    .flag {
+        justify-self: center;
+        align-self: center;
+        width: 100%;
+        /* L’image occupe toute la largeur */
+    }
+
+    .flag img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+    }
+
+    .country {
+        text-indent: 20px;
+        margin-top: 10px;
+        /* Pour espacer du drapeau */
+    } 
+}
+
+/* small screens (mobile) */
+@media screen and (max-width: 600px) {
+    body {
+        display: block;
+        height: auto;
+    }
+
+    .left,
+    .right {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .left {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .sectionTitleLeft,
+    .sectionTitleRight {
+        margin: 10px;
+        border-radius: 0;
+    }
+
+    .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 60vh;
+    }
+
+    .resourceList {
+        justify-content: center;
+        align-items: center;
+    } 
+}
