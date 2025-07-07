@@ -3,9 +3,7 @@ body {
     font-family: "Roboto Flex", sans-serif;
     font-weight: 400;
     margin: 0;
-    display: grid;
     height: 100vh;
-    grid-template-rows: auto 1fr auto
 }
 
 h1 {
@@ -13,7 +11,7 @@ h1 {
 }
 
 h2 {
-    font-size: 32;
+    font-size: 32px;
 }
 
 /* ==== HEADER ==== */
@@ -56,11 +54,11 @@ header span {
 
 main {
     display: flex;
-    gap: 2rem;
+    gap: 15px;
         /* gouttière */
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 25px;
     width: 100%;
 }
 
