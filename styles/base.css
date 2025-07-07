@@ -5,13 +5,15 @@ body {
     margin: 0;
     display: grid;
     height: 100vh;
-    grid-template: auto 1fr auto / 4fr 2fr;
-    /* Header | Main Content | Footer */
-    column-gap: 20px;
+    grid-template-rows: auto 1fr auto
 }
 
 h1 {
     font-size: 40px;
+}
+
+h2 {
+    font-size: 32;
 }
 
 /* ==== HEADER ==== */
@@ -52,8 +54,19 @@ header span {
     border-radius: 5px;
 }
 
+main {
+    display: flex;
+    gap: 2rem;
+        /* gouttière */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 100%;
+}
+
 /* ==== LEFT SECTION CONTAINER ==== */
 .left {
+    flex: 2;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     /* 4 equal columns */
@@ -61,7 +74,6 @@ header span {
     /* Title | Intro + Image | Name | Flag + Country */
     gap: 10px;
     padding: 20px;
-    margin: 20px 0px 20px 20px;
 }
 
 /* Title bar inside left section */
@@ -131,10 +143,10 @@ header span {
 /* ==== RIGHT SECTION CONTAINER ==== */
 
 .right {
+    flex: 1;
     display: flex;
     flex-direction: column;
     background-color: aqua;
-    margin: 20px 20px 20px 0px;
     grid-column: 2;
     grid-row: 2;
 }
