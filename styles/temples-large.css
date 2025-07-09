@@ -12,13 +12,9 @@
     border: 1px solid darkblue;
 }
 
-header span {
+header span h1 {
     font-weight: 100;
     padding: 0 20px;
-}
-
-/* Course title inside header */
-#course-title {
     font-size: 32px;
 }
 
@@ -28,7 +24,7 @@ main {
     border: 1px solid darkblue;
 }
 
-h1 {
+h2 {
     text-align: center;
 }
 
@@ -38,7 +34,7 @@ h1 {
     grid-gap: 25px;
     place-items: center;
     gap: 20px;
-    padding: 20px;
+    padding: 0 20px 20px;
     margin: 0 auto;
 }
 
