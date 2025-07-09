@@ -40,3 +40,54 @@ hamButton.addEventListener("click", () => {
     hamButton.classList.toggle("open");
     mainContent.classList.toggle('push-down');
 });
+
+
+const temples = [
+    { image: "images/temples/bern-switzerland.webp", caption: "Bern Switzerland" },
+    { image: "images/temples/logan-utah.webp", caption: "Logan Utah" },
+    { image: "images/temples/madrid-spain.webp", caption: "Madrid Spain" },
+    { image: "images/temples/manti-utah.webp", caption: "Manti Utah" },
+    { image: "images/temples/nauvoo-illinois.webp", caption: "Nauvoo Illinois" },
+    { image: "images/temples/paris-france.webp", caption: "Paris France" },
+    { image: "images/temples/phoenix-arizona.webp", caption: "Phoenix Arizona" },
+    { image: "images/temples/provo-utah.webp", caption: "Provo Utah" },
+    { image: "images/temples/salt-lake-utah.webp", caption: "Salt Lake Utah" },
+    { image: "images/temples/san-diego-california.webp", caption: "San-Diego California" },
+    { image: "images/temples/st-george-utah.webp", caption: "St George utah" },
+    { image: "images/temples/washington-dc.webp", caption: "Washington D.C." }
+];
+
+const gallery = document.querySelector('.gallery');
+
+temples.forEach(temple => {
+    document.querySelector('.gallery').innerHTML += `
+      <figure>
+        <img src="${temple.image}" alt="${temple.caption}">
+        <figcaption>${temple.caption}</figcaption>
+        <button class="visit-btn" data-caption="${temple.caption}">Mark as Visited</button>
+      </figure>
+    `;
+});
+
+// Load visited temples from localStorage
+let visitedTemples = JSON.parse(localStorage.getItem("visited")) || [];
+
+// Update the button display based on visited temples
+document.querySelectorAll('.visit-btn').forEach(button => {
+    const caption = button.dataset.caption;
+
+    if (visitedTemples.includes(caption)) {
+        button.textContent = "Already Visited";
+        button.disabled = true;
+    }
+
+    // When the user clicks the button, mark the temple as visited
+    button.addEventListener('click', () => {
+        if (!visitedTemples.includes(caption)) {
+            visitedTemples.push(caption);
+            localStorage.setItem("visited", JSON.stringify(visitedTemples));
+            button.textContent = "Already Visited";
+            button.disabled = true;
+        }
+    });
+});
