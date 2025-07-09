@@ -31,17 +31,28 @@ const formattedDate = `${month}/${day}/${year} - ${hours}:${minutes}:${seconds}`
 document.getElementById('lastModified').textContent = `Last modified: ${formattedDate}`;
 //=======================================================================================
 
+// Select the hamburger menu button
 const hamButton = document.querySelector("#menu");
+
+// Select the navigation bar element
 const navigation = document.querySelector(".navBar");
+
+// Select the main content area
 const mainContent = document.querySelector('main');
 
+// Add a click event listener to the hamburger menu button
 hamButton.addEventListener("click", () => {
+    // Toggle the "open" class on the navigation to show/hide the menu
     navigation.classList.toggle("open");
+
+    // Toggle the "open" class on the button to change its icon (☰ ↔ ❎)
     hamButton.classList.toggle("open");
+
+    // Toggle a class on <main> to push content down when the menu is open
     mainContent.classList.toggle('push-down');
 });
 
-
+// Create an array of temple objects (each object contains image path and caption)
 const temples = [
     { image: "images/temples/bern-switzerland.webp", caption: "Bern Switzerland" },
     { image: "images/temples/logan-utah.webp", caption: "Logan Utah" },
@@ -57,8 +68,9 @@ const temples = [
     { image: "images/temples/washington-dc.webp", caption: "Washington D.C." }
 ];
 
+// Select the gallery container where all temple figures will be inserted
 const gallery = document.querySelector('.gallery');
-
+// Create the HTML structure using template literals
 temples.forEach(temple => {
     document.querySelector('.gallery').innerHTML += `
       <figure>
@@ -75,19 +87,26 @@ let visitedTemples = JSON.parse(localStorage.getItem("visited")) || [];
 // Update the button display based on visited temples
 document.querySelectorAll('.visit-btn').forEach(button => {
     const caption = button.dataset.caption;
+    const figure = button.closest('figure');
 
     if (visitedTemples.includes(caption)) {
+        figure.classList.add('visited');
         button.textContent = "Already Visited";
         button.disabled = true;
     }
 
     // When the user clicks the button, mark the temple as visited
     button.addEventListener('click', () => {
+        // Only add if it's not already in the list
         if (!visitedTemples.includes(caption)) {
             visitedTemples.push(caption);
+            // Save updated visited temples list in localStorage
             localStorage.setItem("visited", JSON.stringify(visitedTemples));
+            // Update UI: change button text and disable it
             button.textContent = "Already Visited";
             button.disabled = true;
+            // Apply visual style to the visited image
+            figure.classList.add('visited');
         }
     });
 });

@@ -12,7 +12,7 @@
     border: 1px solid darkblue;
 }
 
-header span h1 {
+header h1 {
     font-weight: 100;
     padding: 0 20px;
     font-size: 32px;
@@ -46,7 +46,14 @@ h2 {
 .gallery img {
     width: 100%;
     height: auto;
-    border-radius: 5px; }
+    border-radius: 5px; 
+}
+/* Style for visited temple images */
+.visited img {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;    
+}
 
 /* ==== FOOTER ==== */
 footer {
