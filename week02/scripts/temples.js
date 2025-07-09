@@ -30,3 +30,13 @@ const formattedDate = `${month}/${day}/${year} - ${hours}:${minutes}:${seconds}`
 // Display the formatted date in the footer with the ID "lastModified"
 document.getElementById('lastModified').textContent = `Last modified: ${formattedDate}`;
 //=======================================================================================
+
+const hamButton = document.querySelector("#menu");
+const navigation = document.querySelector(".navBar");
+const mainContent = document.querySelector('main');
+
+hamButton.addEventListener("click", () => {
+    navigation.classList.toggle("open");
+    hamButton.classList.toggle("open");
+    mainContent.classList.toggle('push-down');
+});
