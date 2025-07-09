@@ -48,6 +48,12 @@ h2 {
     height: auto;
     border-radius: 5px; 
 }
+/* Style for visited temple images */
+.visited img {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease;    
+}
 
 /* ==== FOOTER ==== */
 footer {
