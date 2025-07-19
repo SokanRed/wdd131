@@ -1,3 +1,14 @@
+:root {
+    --blue: darkblue;
+    --text44: #444;
+    --text33: #333;
+    --text22: #222;
+    --lightText: #eeebd8;
+    --white: #fff;
+    --red: red;
+    --yellow: yellow;
+    --bg-opacity: 0.5;
+}
 /* === Base styles (mobile-first) === */
 
 * {
@@ -8,8 +19,8 @@ body {
     margin: 0;
     font-family: 'Roboto Flex', sans-serif;
     font-weight: 400;
-    background-color: none;
-    color: #333;
+    /*background-color: white;*/
+    color: var(--text33);
     padding: 0.5rem;
     display: flex;
     flex-direction: column;
@@ -24,45 +35,56 @@ body::before {
     width: 100%;
     height: 100%;
     background: linear-gradient(to right,
-            darkblue 0%,
-            darkblue 33.33%,
-            white 33.33%,
-            white 66.66%,
-            red 66.66%,
-            red 100%);
-    opacity: 0.5;
-    /* 20% opacity */
+            var(--blue) 0%,
+            var(--blue) 33.33%,
+            var(--white) 33.33%,
+            var(--white) 66.66%,
+            var(--red) 66.66%,
+            var(--red) 100%);
+            opacity: var(--bg-opacity);
     z-index: -1;
     pointer-events: none;
-    /* important to allow clicks through */ }
+}
 
 /* ==== HEADER ==== */
 header {
-    background-color: darkblue;
+    background-color: var(--blue);
     padding: 5px 0;
     border-radius: 8px;
     text-align: center;
-    color: #eeebd8;
+    color: var(--lightText);
 }
 h1 {
     font-size: 40px;
 }
 
-main {
+.title::after {
+    content: "";
+    display: block;
+    margin: 0.5rem auto 0;
+    width: 100px;
+    height: 6px;
+    background: repeating-linear-gradient(45deg,
+            var(--yellow),
+            var(--yellow) 8px,
+            transparent 8px,
+            transparent 10px);
+    border-radius: 3px; }
+
+
+.hero {
+    position:relative;
     display: flex;
     flex-direction: column;
     gap: 12px; 
 }
 
-figure {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+.hero figure {
     margin: 0;
     text-align: center; 
 }
 
-figure img {
+.hero img {
     width: 100%;
     height: auto;
     border-radius: 8px;
@@ -71,39 +93,38 @@ figure img {
 figcaption {
     margin: 0;
     font-size: 0.9rem;
-    color: darkblue; 
+    color: var(--blue); 
 }
 
-section {
-    background: #fff;
+.hero section {
+    background: var(--white);
     border-radius: 8px;
-    border: 5px solid red;
+    border: 5px solid var(--red);
     padding: 8px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-section h2 {
+.hero section h2 {
     margin-top: 0;
     font-size: 1.4rem;
     text-align: center;
     border-bottom: 1px solid #ccc;
-    padding-bottom: 0.5rem; }
-
-/*table {
-    font-family: Arial, sans-serif;
-    font-size: 18px;
+    padding-bottom: 0.5rem; 
 }
 
-td {
-    padding: 6px 12px;
+.weather h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 1.4rem;
 }
 
-td:first-child {
-    font-weight: bold;
-    text-align: right;
-    width: 150px;
+.weather .icon {
+    width: 60px;
+    height: 60px;
+    opacity: 0.8; 
 }
-*/
 
 table {
     width: 100%;
@@ -119,22 +140,24 @@ td {
 td:first-child {
     text-align: right;
     font-weight: bold;
-    color: #444;
+    color: var(--text44);
     width: 50%;
 }
 
 td:last-child {
     text-align: left;
-    color: #222; }
+    color: var(--text22); 
+}
 
 /* ==== FOOTER ==== */
-footer {
-    background-color: darkblue;
+.footer {
+    background-color: var(--blue);
     border-radius: 8px;
-    color: yellow;
+    color: var(--yellow);
     padding: 1rem;
     text-align: center;
 }
+
 
 /* === Media query for larger screens (tablets & desktops) === */
 @media (min-width: 641px) {
@@ -159,11 +182,10 @@ footer {
         }
     
         /* Overlay layout for .data and .weather */
-        .data,
-        .weather {
+        .hero section.data,
+        .hero section.weather {
             position: absolute;
             background: rgba(255, 255, 255, 0.8);
-            /* Semi-transparent white */
             border-radius: 8px;
             border: none;
             padding: 8px 0;
@@ -173,27 +195,31 @@ footer {
             z-index: 1;
         }
     
-        .data {
+        .hero section.data {
             top: 20px;
             left: 20px;
         }
     
-        .weather {
+        .hero section.weather {
             bottom: 20px;
             right: 20px;
         }
     
-        section h2 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+        .weather h2 {
+            flex-direction: row;
+            justify-content: center;
         }
-    
-        table {
+        
+        .weather .icon {
+            margin-left: 0.5rem;      
+        }
+
+        .hero table {
             font-size: 0.9rem;
         }
     
         figcaption {
             display: none;
-            /* Optional: hide caption on large screens */
-        }   
+        }
+        
     } 

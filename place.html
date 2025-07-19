@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 - Dynamic Web Fundamentals - Denis PC Poussard</title>
+    <meta name="author" content="Denis 'SokanRed' Poussard">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - W03 Assignment: Country Page - Denis PC Poussard">
+
+    <title>WDD 131 -France - W03 Assignment: Country Page - Dynamic Web Fundamentals - Denis PC Poussard</title>
     
     <link rel="stylesheet" href="styles/place.css">
     <script src="scripts/place.js" defer></script>
@@ -18,19 +21,20 @@
     </header>
 
     <main>
-        <figure>
-            <picture>
-                <!-- Portrait image for narrow (mobile) screens -->
-                <source srcset="images/notreDamePort.webp" media="(max-width: 640px)">
-            
-                <!-- Landscape image for wider screens -->
-                <source srcset="images/notreDameLand.webp" media="(min-width: 641px)">
-            
-                <!-- Fallback image -->
-                <img src="images/notreDameLand.webp" alt="Descriptive alt text">
-            </picture>
-            <figcaption>Notre Dame de Paris</figcaption>
-
+        <div class="hero">
+            <figure>
+                <picture>
+                    <!-- Portrait image for narrow (mobile) screens -->
+                    <source srcset="images/notreDamePort.webp" media="(max-width: 640px)">
+                
+                    <!-- Landscape image for wider screens -->
+                    <source srcset="images/notreDameLand.webp" media="(min-width: 641px)">
+                
+                    <!-- Fallback image -->
+                    <img src="images/notreDameLand.webp" alt="Descriptive alt text">
+                </picture>
+                <figcaption>Notre Dame de Paris</figcaption>
+            </figure>
             <section class="data">
                 <h2>Data</h2>
                 <table>
@@ -70,7 +74,9 @@
             </section>
 
             <section class="weather">
-                <h2>Weather</h2>
+                <h2>Weather
+                    <img src="images/sunny_icon.svg" alt="Weather Icon" class="icon" />
+                </h2>
                 <table>
                     <tr>
                         <td>Temperature:</td>
@@ -90,7 +96,7 @@
                     </tr>    
                 </table>
             </section>
-        </figure>
+        </div>
     </main>
     
     <footer class="footer">
