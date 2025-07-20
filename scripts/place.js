@@ -54,13 +54,19 @@ fetch(url)
                 0.3965 * temp * Math.pow(v, 0.16)
             ).toFixed(1) + " °C";
         } else {
-            windChill = "Not applicable";
+            windChill = null;
         }
 
         document.getElementById("temp").textContent = `${temp} °C`;
         document.getElementById("conditions").textContent = capitalize(conditions);
         document.getElementById("wind").textContent = `${windSpeedKmh} km/h`;
-        document.getElementById("windchill").textContent = windChill;
+        
+        const windChillElement = document.getElementById("windchill");
+        if (windChill) {
+            windChillElement.textContent = windChill;
+        } else {
+            windChillElement.parentElement.style.display = "none";
+        }
     })
     .catch(error => {
         document.getElementById("temp").textContent = "Error";

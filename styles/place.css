@@ -58,7 +58,7 @@ h1 {
     font-size: 40px;
 }
 
-.title::after {
+/*.title::after {
     content: "";
     display: block;
     margin: 0.5rem auto 0;
@@ -69,7 +69,7 @@ h1 {
             var(--yellow) 8px,
             transparent 8px,
             transparent 10px);
-    border-radius: 3px; }
+    border-radius: 3px; }*/
 
 
 .hero {
@@ -133,7 +133,7 @@ table {
 }
 
 td {
-    padding: 0.5rem 1rem;
+    padding: 4px;
     vertical-align: top;
 }
 
@@ -174,6 +174,20 @@ td:last-child {
         figure {
             position: relative;
         }
+
+        .title::after {
+            content: "";
+            display: block;
+            margin: 0.5rem auto 0;
+            width: 120px;
+            height: 6px;
+            background: repeating-linear-gradient(45deg,
+                var(--yellow),
+                var(--yellow) 8px,
+                transparent 8px,
+                transparent 10px);
+            border-radius: 3px; 
+        }
     
         figure img {
             max-height: 700px;
@@ -204,14 +218,9 @@ td:last-child {
             bottom: 20px;
             right: 20px;
         }
-    
-        .weather h2 {
-            flex-direction: row;
-            justify-content: center;
-        }
         
         .weather .icon {
-            margin-left: 0.5rem;      
+            display: none;      
         }
 
         .hero table {
