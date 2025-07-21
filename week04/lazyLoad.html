@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 04 - Learning Activity - lazy load</title>
+
+    <link rel="stylesheet" href="styles/lazyLoad.css">
+    <script src="scripts/lazyLoad.js" defer></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@100;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1 id="course-title">WDD 131 - Dynamic Web Fundamentals</h1>
+    </header>
+    <main>
+        <picture>
+            <img src="images/bonsai1.webp" alt="Bonsai 1" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="images/bonsai2.webp" alt="Bonsai 2" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="images/bonsai3.webp" alt="Bonsai 3" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="images/bonsai4.webp" alt="Bonsai 4" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="images/bonsai5.webp" alt="Bonsai 5" loading="lazy" width="400" height="600">
+        </picture>
+        <picture>
+            <img src="images/bonsai6.webp" alt="Bonsai 6" loading="lazy" width="400" height="600">
+        </picture>
+    </main>
+    <footer class="footer">
+        <p>&#169; <span id="copyright-year"></span> - Denis PC Poussard - France</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>

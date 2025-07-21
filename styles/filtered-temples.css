@@ -1,0 +1,92 @@
+@media (max-width: 640px) {
+
+    body {
+        padding: 1rem;
+        background-color: #e0f7fa;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    #menu {
+        font-size: 1.5rem;
+        border: 0;
+        background: none;
+        color: #eeebd8;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 20;
+        cursor:pointer;
+    }
+    
+    #menu::before {
+        content: "☰";
+    }
+    
+    #menu.open::before {
+        content: "❎";
+    }
+    /*header, .navBar {
+        height: 80px;
+    }*/
+
+    .navBar {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border: 1px solid blue;
+        background-color: blue;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        padding: 15px 0; 
+    }
+    
+    .navBar.open {
+        display: flex;
+        }
+
+    .navigation {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        color: #eeebd8;
+    }
+    
+    .navigation a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+    
+    .navigation a:hover {
+        color: blue;
+        background-color: yellow;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .navigation a.active {
+        color: darkblue;
+        background-color: lightyellow;
+        font-weight: bold;
+        border-radius: 4px;
+        padding: 5px 10px;
+    }
+
+    main {
+        display: block;
+    }
+
+    main.push-down {
+        margin-top: 128px;
+    }
+
+}
