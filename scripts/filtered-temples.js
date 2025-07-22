@@ -54,8 +54,182 @@ hamButton.addEventListener("click", () => {
 
 // Create an array of temple objects (each object contains image path and caption)
 const temples = [
-    { image: "../images/temples/bern-switzerland.webp", caption: "Bern Switzerland" },
-    { image: "../images/temples/logan-utah.webp", caption: "Logan Utah" },
+  {
+    templeName: "Bern Switzerland",
+    location: "Bern, Switzerland",
+    dedicated: "9-10 September 1955",
+    area:  35546,
+    imageUrl:
+      "https://churchofjesuschristtemples.org/assets/img/temples/bern-switzerland-temple/bern-switzerland-temple-54641.jpg"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  },
+  {
+    templeName: "Logan Utah",
+    location: "Logan, Utah",
+    dedicated: "1884",
+    area: 119619,
+    imageUrl:
+      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+  }
     { image: "../images/temples/madrid-spain.webp", caption: "Madrid Spain" },
     { image: "../images/temples/manti-utah.webp", caption: "Manti Utah" },
     { image: "../images/temples/nauvoo-illinois.webp", caption: "Nauvoo Illinois" },
