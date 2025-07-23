@@ -160,6 +160,20 @@ td:last-child {
         figure {
             position: relative;
         }
+
+        .title::after {
+            content: "";
+            display: block;
+            margin: 0.5rem auto 0;
+            width: 120px;
+            height: 6px;
+            background: repeating-linear-gradient(45deg,
+                var(--yellow),
+                var(--yellow) 8px,
+                transparent 8px,
+                transparent 10px);
+            border-radius: 3px; 
+        }
     
         figure img {
             max-height: 700px;
@@ -193,18 +207,6 @@ td:last-child {
         
         .weather .icon {
             display: none;      
-        }
-        
-        #weather-heading {
-            text-align: center;
-            display: block;
-            margin: 20px auto;
-        }
-
-        #weather-heading::after {
-            content: ' 🌤️';
-            font-size: 1.4rem;
-            vertical-align: middle;
         }
 
         .hero table {

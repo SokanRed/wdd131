@@ -32,51 +32,32 @@ document.getElementById('lastModified').textContent = `Last modified: ${formatte
 //=======================================================================================
 
 //========================Weather informations===========================================
-const apiKey = "49e07442d0144224d5e743d782ab9e77"; // Replace with your OpenWeatherMap API key
-const url = `https://api.openweathermap.org/data/2.5/weather?q=Paris,fr&units=metric&appid=${apiKey}&lang=en`;
+// Static weather values
+const temperatureCelsius = 10; // in °C
+const windSpeedKmh = 10;       // in km/h
 
-fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        const temp = data.main.temp;
-        const conditions = data.weather[0].description;
-        const windSpeedMs = data.wind.speed;
-        const windSpeedKmh = (windSpeedMs * 3.6).toFixed(1);
+// Display static values in HTML
+document.getElementById("temp").textContent = `${temperatureCelsius} °C`;
+document.getElementById("wind").textContent = `${windSpeedKmh} km/h`;
+document.getElementById("conditions").textContent = "Cloudy";
 
-        // Calculate Wind Chill based on standard conditions
-        let windChill;
-        if (temp <= 10 && windSpeedKmh > 4.8) {
-            const v = windSpeedKmh;
-            windChill = (
-                13.12 +
-                0.6215 * temp -
-                11.37 * Math.pow(v, 0.16) +
-                0.3965 * temp * Math.pow(v, 0.16)
-            ).toFixed(1) + " °C";
-        } else {
-            windChill = "N/A";
-        }
-
-        document.getElementById("temp").textContent = `${temp} °C`;
-        document.getElementById("conditions").textContent = capitalize(conditions);
-        document.getElementById("wind").textContent = `${windSpeedKmh} km/h`;
-        document.getElementById("windchill").textContent = windChill;
-        /*const windChillElement = document.getElementById("windchill");
-        if (windChill) {
-            windChillElement.textContent = windChill;
-        } else {
-            windChillElement.parentElement.style.display = "none";
-        }*/
-    })
-    .catch(error => {
-        document.getElementById("temp").textContent = "Error";
-        document.getElementById("conditions").textContent = "Error";
-        document.getElementById("wind").textContent = "Error";
-        document.getElementById("windchill").textContent = "Error";
-        console.error("Weather API error:", error);
-    });
-
-function capitalize(text) {
-    return text.charAt(0).toUpperCase() + text.slice(1);
+// Wind Chill Calculation Function
+function calculateWindChill(tempC, speedKmh) {
+    return (
+        13.12 +
+        0.6215 * tempC -
+        11.37 * Math.pow(speedKmh, 0.16) +
+        0.3965 * tempC * Math.pow(speedKmh, 0.16)
+    ).toFixed(1);
 }
-//==========================================================================
+
+// Determine if wind chill is applicable and update DOM
+const windchillElement = document.getElementById("windchill");
+
+if (temperatureCelsius <= 10 && windSpeedKmh > 4.8) {
+    const windChill = calculateWindChill(temperatureCelsius, windSpeedKmh);
+    windchillElement.textContent = `${windChill} °C`;
+} else {
+    windchillElement.textContent = "N/A";
+}
+//=======================================================================================
