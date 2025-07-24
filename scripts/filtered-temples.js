@@ -220,7 +220,7 @@ function displayTemples(filteredTemples) {
         <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
         <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
       </div>
-      <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+      <img srcset="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
     `;
 
     gallery.appendChild(card);
