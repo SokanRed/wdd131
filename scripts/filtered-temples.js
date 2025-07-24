@@ -55,100 +55,76 @@ hamButton.addEventListener("click", () => {
 // Create an array of temple objects (each object contains image path and caption)
 const temples = [
   {
-    templeName: "St George Utah",
-    location: "St George, Utah",
-    dedicated: "1877, April, 6-8",
-    area: 143969,
+    templeName: "Aba Nigeria",
+    location: "Aba, Nigeria",
+    dedicated: "2005, August, 7",
+    area: 11500,
     imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/st.-george-utah-temple/st.-george-utah-temple-40435-main.jpg"
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/aba-nigeria/400x250/aba-nigeria-temple-lds-273999-wallpaper.jpg"
   },
   {
-    templeName: "Logan Utah",
-    location: "Logan, Utah",
-    dedicated: "1884, May, 17-19",
-    area: 119619,
-    imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/logan-utah-temple/logan-utah-temple-40550-main.jpg"
-  },
-  {
-    templeName:"Manti Utah",
-    location: "Manti, Utah",
+    templeName: "Manti Utah",
+    location: "Manti, Utah, US",
     dedicated: "1888, May, 17",
     area: 74792,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/manti-utah-temple/manti-utah-temple-40551-main.jpg"
   },
   {
-    templeName: "Salt Lake City Utah",
-    location: "Salt Lake City, Utah",
-    dedicated: "1893, April, 6-24",
-    area: 382207,
+    templeName: "Payson Utah",
+    location: "Payson, Utah, US",
+    dedicated: "2015, June, 7",
+    area: 96630,
     imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/salt-lake-temple/salt-lake-temple-15669-main.jpg"
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/payson-utah/400x225/payson-utah-temple-exterior-1416671-wallpaper.jpg"
   },
   {
-    templeName: "Bern Switzerland",
-    location: "Bern, Switzerland",
-    dedicated: "1955, September, 9-10",
-    area: 35546,
+    templeName: "Yigo Guam",
+    location: "Yigo, Guam",
+    dedicated: "2020, May, 2",
+    area: 6861,
     imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/bern-switzerland-temple/bern-switzerland-temple-54641-main.jpg"
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/yigo-guam/400x250/yigo_guam_temple_2.jpg"
   },
   {
     templeName: "Washington D.C.",
-    location: "Washington D.C.",
-    dedicated: "1974, November, 19-22",
+    location: "Kensington, Maryland, US",
+    dedicated: "1974, November, 19",
     area: 156558,
     imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/washington-d.c.-temple/washington-d.c.-temple-14992-main.jpg"
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/washington-dc/400x250/washington_dc_temple-exterior-2.jpeg"
   },
   {
-    templeName: "Taipei Taiwan ",
-    location: "Taipei, Taiwan",
-    dedicated: "1984, November, 17-18",
-    area: 9945,
+    templeName: "Lima Perú",
+    location: "Lima, Perú",
+    dedicated: "1986, January, 10",
+    area: 9600,
     imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/taipei-taiwan-temple/taipei-taiwan-temple-8296-main.jpg"
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/lima-peru/400x250/lima-peru-temple-evening-1075606-wallpaper.jpg"
   },
   {
-    templeName: "San Diego California",
-    location: "San Diego, California",
-    dedicated: "1993, April, 25-30",
-    area: 72000,
+    templeName: "Mexico City Mexico",
+    location: "Mexico City, Mexico",
+    dedicated: "1983, December, 2",
+    area: 116642,
     imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/san-diego-california-temple/san-diego-california-temple-9060-main.jpg"
+      "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
   },
   {
-    templeName: "Madrid Spain",
-    location: "Madrid, Spain",
-    dedicated: "1999, March, 19-21",
-    area: 45800,
+    templeName: "Logan Utah",
+    location: "Logan, Utah, US",
+    dedicated: "1884, May, 17-19",
+    area: 119619,
     imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/_temp/056-Madrid-Spain-Temple.jpg"
-  },
-  {
-    templeName: "Nauvoo Illinois",
-    location: "Nauvoo, Illinois",
-    dedicated: "2002, November, 16",
-    area: 54000,
-    imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/nauvoo-illinois-temple/nauvoo-illinois-temple-50576-main.jpg"
+      "https://churchofjesuschristtemples.org/assets/img/temples/logan-utah-temple/logan-utah-temple-40550-main.jpg"
   },
   {
     templeName: "Phoenix Arizona",
-    location: "Phoenix, Arizona",
+    location: "Phoenix, Arizona, US",
     dedicated: "2014, November, 16",
     area: 64870,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/phoenix-arizona-temple/phoenix-arizona-temple-12711-main.jpg"
-  },
-  {
-    templeName: "Provo City Center Utah",
-    location: "Provo, Utah",
-    dedicated: "2016, March, 20",
-    area: 85084,
-    imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/provo-city-center-temple/provo-city-center-temple-56386-main.jpg"
   },
   {
     templeName: "Paris France",
@@ -157,22 +133,6 @@ const temples = [
     area: 44175,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/paris-france-temple/paris-france-temple-2056-main.jpg"
-  },
-  {
-    templeName: "Yigo Guam",
-    location: "Yigo, Guam",
-    dedicated: "2022, May, 22",
-    area: 6861,
-    imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/yigo-guam-temple/yigo-guam-temple-26495-main.jpg"
-  },
-  {
-    templeName: "Helena Montana",
-    location: "Helena, Montana",
-    dedicated: "2023, May, 7",
-    area: 9794,
-    imageUrl:
-      "https://churchofjesuschristtemples.org/assets/img/temples/helena-montana-temple/helena-montana-temple-37751-main.jpg"
   }
 ];
 
@@ -220,7 +180,7 @@ function displayTemples(filteredTemples) {
         <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
         <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
       </div>
-      <img srcset="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+      <img srcset="${temple.imageUrl}" alt="${temple.templeName}" width="300" height="200" loading="lazy">
     `;
 
     gallery.appendChild(card);
