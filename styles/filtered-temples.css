@@ -81,6 +81,10 @@
         padding: 5px 10px;
     }
 
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
     main {
         display: block;
     }

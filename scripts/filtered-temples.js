@@ -60,7 +60,7 @@ const temples = [
     dedicated: "1877, April, 6-8",
     area: 143969,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+      "https://churchofjesuschristtemples.org/assets/img/temples/st.-george-utah-temple/st.-george-utah-temple-40435-main.jpg"
   },
   {
     templeName: "Logan Utah",
@@ -68,7 +68,7 @@ const temples = [
     dedicated: "1884, May, 17-19",
     area: 119619,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+      "https://churchofjesuschristtemples.org/assets/img/temples/logan-utah-temple/logan-utah-temple-40550-main.jpg"
   },
   {
     templeName:"Manti Utah",
@@ -76,7 +76,7 @@ const temples = [
     dedicated: "1888, May, 17",
     area: 74792,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+      "https://churchofjesuschristtemples.org/assets/img/temples/manti-utah-temple/manti-utah-temple-40551-main.jpg"
   },
   {
     templeName: "Salt Lake City Utah",
@@ -84,12 +84,12 @@ const temples = [
     dedicated: "1893, April, 6-24",
     area: 382207,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+      "https://churchofjesuschristtemples.org/assets/img/temples/salt-lake-temple/salt-lake-temple-15669-main.jpg"
   },
   {
     templeName: "Bern Switzerland",
     location: "Bern, Switzerland",
-    dedicated: "9-10 September 1955",
+    dedicated: "1955, September, 9-10",
     area: 35546,
     imageUrl:
       "https://churchofjesuschristtemples.org/assets/img/temples/bern-switzerland-temple/bern-switzerland-temple-54641-main.jpg"
@@ -108,7 +108,7 @@ const temples = [
     dedicated: "1984, November, 17-18",
     area: 9945,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+      "https://churchofjesuschristtemples.org/assets/img/temples/taipei-taiwan-temple/taipei-taiwan-temple-8296-main.jpg"
   },
   {
     templeName: "San Diego California",
@@ -116,7 +116,7 @@ const temples = [
     dedicated: "1993, April, 25-30",
     area: 72000,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+      "https://churchofjesuschristtemples.org/assets/img/temples/san-diego-california-temple/san-diego-california-temple-9060-main.jpg"
   },
   {
     templeName: "Madrid Spain",
@@ -124,7 +124,7 @@ const temples = [
     dedicated: "1999, March, 19-21",
     area: 45800,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+      "https://churchofjesuschristtemples.org/assets/img/temples/_temp/056-Madrid-Spain-Temple.jpg"
   },
   {
     templeName: "Nauvoo Illinois",
@@ -132,15 +132,15 @@ const temples = [
     dedicated: "2002, November, 16",
     area: 54000,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+      "https://churchofjesuschristtemples.org/assets/img/temples/nauvoo-illinois-temple/nauvoo-illinois-temple-50576-main.jpg"
   },
   {
     templeName: "Phoenix Arizona",
     location: "Phoenix, Arizona",
-    dedicated: "2014 November, 16",
+    dedicated: "2014, November, 16",
     area: 64870,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+      "https://churchofjesuschristtemples.org/assets/img/temples/phoenix-arizona-temple/phoenix-arizona-temple-12711-main.jpg"
   },
   {
     templeName: "Provo City Center Utah",
@@ -148,7 +148,7 @@ const temples = [
     dedicated: "2016, March, 20",
     area: 85084,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+      "https://churchofjesuschristtemples.org/assets/img/temples/provo-city-center-temple/provo-city-center-temple-56386-main.jpg"
   },
   {
     templeName: "Paris France",
@@ -156,7 +156,7 @@ const temples = [
     dedicated: "2017, May, 21",
     area: 44175,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+      "https://churchofjesuschristtemples.org/assets/img/temples/paris-france-temple/paris-france-temple-2056-main.jpg"
   },
   {
     templeName: "Yigo Guam",
@@ -164,7 +164,7 @@ const temples = [
     dedicated: "2022, May, 22",
     area: 6861,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
+      "https://churchofjesuschristtemples.org/assets/img/temples/yigo-guam-temple/yigo-guam-temple-26495-main.jpg"
   },
   {
     templeName: "Helena Montana",
@@ -172,29 +172,99 @@ const temples = [
     dedicated: "2023, May, 7",
     area: 9794,
     imageUrl:
-      "../images/temples/logan-utah.webp", caption: "Logan Utah"
-  },
-    { image: "../images/temples/madrid-spain.webp", caption: "Madrid Spain" },
-    { image: "../images/temples/manti-utah.webp", caption: "Manti Utah" },
-    { image: "../images/temples/nauvoo-illinois.webp", caption: "Nauvoo Illinois" },
-    { image: "../images/temples/paris-france.webp", caption: "Paris France" },
-    { image: "../images/temples/phoenix-arizona.webp", caption: "Phoenix Arizona" },
-    { image: "../images/temples/provo-utah.webp", caption: "Provo Utah" },
-    { image: "../images/temples/salt-lake-utah.webp", caption: "Salt Lake Utah" },
-    { image: "../images/temples/san-diego-california.webp", caption: "San-Diego California" },
-    { image: "../images/temples/st-george-utah.webp", caption: "St George utah" },
-    { image: "../images/temples/washington-dc.webp", caption: "Washington D.C." }
+      "https://churchofjesuschristtemples.org/assets/img/temples/helena-montana-temple/helena-montana-temple-37751-main.jpg"
+  }
 ];
 
+
 // Select the gallery container where all temple figures will be inserted
-const gallery = document.querySelector('.gallery');
+//const gallery = document.getElementById("gallery");
 // Create the HTML structure using template literals
-temples.forEach(temple => {
-    document.querySelector('.gallery').innerHTML += `
-      <figure>
-        <img src="${temple.image}" alt="${temple.caption}">
-        <figcaption>${temple.caption}</figcaption>
-      </figure>
+/*temples.forEach(temple => {
+  const card = document.createElement("div");
+  card.className = "card";
+
+  card.innerHTML = `
+        <div class="card-content">
+          <h2>${temple.templeName}</h2>
+          <p><strong>Location:</strong> ${temple.location}</p>
+          <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+          <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+        </div>
+        <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+      `;
+
+  gallery.appendChild(card);
+});*/
+
+// Sélection des éléments DOM
+const gallery = document.getElementById("gallery");
+const navButtons = document.querySelectorAll(".navigation a");
+
+// Fonction pour vider la galerie
+function clearGallery() {
+  gallery.innerHTML = "";
+}
+
+// Fonction pour afficher les temples
+function displayTemples(filteredTemples) {
+  clearGallery();
+  filteredTemples.forEach(temple => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <div class="card-content">
+        <h2>${temple.templeName}</h2>
+        <p><strong>Location:</strong> ${temple.location}</p>
+        <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+        <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
+      </div>
+      <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
     `;
+
+    gallery.appendChild(card);
+  });
+}
+
+// Fonction de filtrage
+function filterTemples(filter) {
+  let filteredTemples;
+
+  switch (filter) {
+    case "old":
+      filteredTemples = temples.filter(t => parseInt(t.dedicated) < 1900);
+      break;
+    case "new":
+      filteredTemples = temples.filter(t => parseInt(t.dedicated) > 2000);
+      break;
+    case "large":
+      filteredTemples = temples.filter(t => t.area > 90000);
+      break;
+    case "small":
+      filteredTemples = temples.filter(t => t.area < 10000);
+      break;
+    case "all":
+    default:
+      filteredTemples = temples;
+  }
+
+  displayTemples(filteredTemples);
+}
+
+// Gestion des clics sur la navbar
+navButtons.forEach(button => {
+  button.addEventListener("click", e => {
+    e.preventDefault();
+
+    // Mise à jour des classes actives
+    navButtons.forEach(btn => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    const filter = button.dataset.filter;
+    filterTemples(filter);
+  });
 });
 
+// Afficher tous les temples au chargement
+displayTemples(temples);
