@@ -137,26 +137,6 @@ const temples = [
 ];
 
 
-// Select the gallery container where all temple figures will be inserted
-//const gallery = document.getElementById("gallery");
-// Create the HTML structure using template literals
-/*temples.forEach(temple => {
-  const card = document.createElement("div");
-  card.className = "card";
-
-  card.innerHTML = `
-        <div class="card-content">
-          <h2>${temple.templeName}</h2>
-          <p><strong>Location:</strong> ${temple.location}</p>
-          <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
-          <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-        </div>
-        <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
-      `;
-
-  gallery.appendChild(card);
-});*/
-
 // Sélection des éléments DOM
 const gallery = document.getElementById("gallery");
 const navButtons = document.querySelectorAll(".navigation a");
