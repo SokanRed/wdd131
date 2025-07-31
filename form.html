@@ -2,10 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Denis SokanRed Poussard">
+    <meta name="description" content="WDD 131 - Dynamic Web Fundamentals - W01 Assignment: Home Page - Denis PC Poussard">
+
     <title>Product Review Form</title>
+
     <link rel="stylesheet" href="styles/form.css" />
+    <script src="scripts/form.js" defer></script>
 </head>
 
 <body>
@@ -38,18 +43,19 @@
             <!-- Useful Features -->
             <fieldset>
                 <legend>Useful Features (Check all that apply):</legend>
-                <label><input type="checkbox" id="feature1" name="features" value="Easy Setup" /> Easy Setup</label>
-                <label><input type="checkbox" id="feature2" name="features" value="Durability" /> Durability</label>
-                <label><input type="checkbox" id="feature3" name="features" value="Performance" /> Performance</label>
                 <label><input type="checkbox" id="feature4" name="features" value="Design" /> Design</label>
+                <label><input type="checkbox" id="feature2" name="features" value="Durability" /> Durability</label>
+                <label><input type="checkbox" id="feature1" name="features" value="Easy Setup" /> Easy Setup</label>
+                <label><input type="checkbox" id="feature3" name="features" value="Performance" /> Performance</label>
+                
             </fieldset>
 
             <!-- Written Review -->
-            <label for="review">Written Review (Optional):</label>
+            <label for="review" class="optional">Written Review (Optional):</label>
             <textarea id="review" name="review" rows="4" cols="50"></textarea>
 
             <!-- User Name -->
-            <label for="userName">Your Name (Optional):</label>
+            <label for="userName" class="optional">Your Name (Optional):</label>
             <input type="text" id="userName" name="userName" />
 
             <!-- Submit Button -->
@@ -57,11 +63,12 @@
         </form>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Your Name or Course Footer Text</p>
+    <footer class="footer">
+        <p>&#169; <span id="copyright-year"></span> - Denis PC Poussard - France</p>
+        <p id="lastModified"></p>
     </footer>
 
-    <script src="scripts/form.js"></script>
+    
 </body>
 
 </html>

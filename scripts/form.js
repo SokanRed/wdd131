@@ -1,12 +1,43 @@
+// ============Display the copyright year========================
+// Get the current year and display it in the footer
+document.getElementById('copyright-year').textContent = new Date().getFullYear();
+//===============================================================
 
+// ============Display Last Modification Date and Time in Footer Using JavaScript=======
+// Get the date and time of the last modification of the page
+const lastModified = new Date(document.lastModified);
+
+// Extract the month, day, year, hours, minutes, and seconds
+let month = lastModified.getMonth() + 1; // Months start at 0, so we add 1
+let day = lastModified.getDate();
+let year = lastModified.getFullYear();
+let hours = lastModified.getHours();
+let minutes = lastModified.getMinutes();
+let seconds = lastModified.getSeconds();
+
+// Ensure the month and day are two digits (e.g., 09 instead of 9)
+if (month < 10) month = '0' + month;
+if (day < 10) day = '0' + day;
+
+// Ensure the hours, minutes, and seconds are two digits as well
+if (hours < 10) hours = '0' + hours;
+if (minutes < 10) minutes = '0' + minutes;
+if (seconds < 10) seconds = '0' + seconds;
+
+// Format the date and time
+const formattedDate = `${month}/${day}/${year} - ${hours}:${minutes}:${seconds}`;
+
+// Display the formatted date in the footer with the ID "lastModified"
+document.getElementById('lastModified').textContent = `Last modified: ${formattedDate}`;
+//=======================================================================================
 
 // Product Array
 const products = [
-    { id: "prod1", name: "Wireless Headphones" },
-    { id: "prod2", name: "Smart Watch" },
-    { id: "prod3", name: "Bluetooth Speaker" },
     { id: "prod4", name: "4K Monitor" },
-    { id: "prod5", name: "Gaming Mouse" }
+    { id: "prod3", name: "Bluetooth Speaker" },
+    { id: "prod5", name: "Gaming Mouse" },
+    { id: "prod2", name: "Smart Watch" },
+    { id: "prod1", name: "Wireless Headphones" } 
 ];
 
 // Populate select field
