@@ -1,0 +1,33 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f5f5f5;
+    color: #333;
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+}
+
+h1,
+h2 {
+    color: #3a3a70;
+    /* dark blue for headings */
+}
+
+.accent {
+    color: #ac3b3b;
+    /* brick red accent */
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+img.wireframe {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+}
+
+ul {
+    padding-left: 1.2rem;
+}
