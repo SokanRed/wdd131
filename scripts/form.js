@@ -33,11 +33,18 @@ document.getElementById('lastModified').textContent = `Last modified: ${formatte
 
 // Product Array
 const products = [
-    { id: "prod4", name: "4K Monitor" },
-    { id: "prod3", name: "Bluetooth Speaker" },
-    { id: "prod5", name: "Gaming Mouse" },
-    { id: "prod2", name: "Smart Watch" },
-    { id: "prod1", name: "Wireless Headphones" } 
+    { id: "prod1", name: "4K Monitor" },
+    { id: "prod2", name: "Bluetooth Speaker" },
+    { id: "prod3", name: "Gaming Mouse" },
+    { id: "prod4", name: "Mechanical Keyboard" },
+    { id: "prod5", name: "Noise-Cancelling Earbuds" },
+    { id: "prod6", name: "Portable Charger" },
+    { id: "prod7", name: "Robot Vacuum Cleaner" },
+    { id: "prod8", name: "Smart Thermostat" },
+    { id: "prod9", name: "Smart Watch" },
+    { id: "prod10", name: "Wireless Headphones" }
+    
+    
 ];
 
 // Populate select field
