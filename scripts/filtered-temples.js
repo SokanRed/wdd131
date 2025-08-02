@@ -31,26 +31,29 @@ const formattedDate = `${month}/${day}/${year} - ${hours}:${minutes}:${seconds}`
 document.getElementById('lastModified').textContent = `Last modified: ${formattedDate}`;
 //=======================================================================================
 
-// Select the hamburger menu button
+// Select DOM elements
 const hamButton = document.querySelector("#menu");
-
-// Select the navigation bar element
 const navigation = document.querySelector(".navBar");
+const mainContent = document.querySelector("main");
 
-// Select the main content area
-const mainContent = document.querySelector('main');
-
-// Add a click event listener to the hamburger menu button
+// Add a single event listener to handle all toggle behavior
 hamButton.addEventListener("click", () => {
-    // Toggle the "open" class on the navigation to show/hide the menu
-    navigation.classList.toggle("open");
+  const isOpen = hamButton.classList.toggle("open");
 
-    // Toggle the "open" class on the button to change its icon (☰ ↔ ❎)
-    hamButton.classList.toggle("open");
+  // Toggle navigation visibility
+  navigation.classList.toggle("open");
 
-    // Toggle a class on <main> to push content down when the menu is open
-    mainContent.classList.toggle('push-down');
+  // Push content down when menu is open
+  mainContent.classList.toggle("push-down");
+
+  // Update ARIA attributes for accessibility
+  hamButton.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  hamButton.setAttribute("aria-expanded", isOpen);
+
+  // Optional debug log
+  //console.log("Button toggled:", isOpen);
 });
+
 
 // Create an array of temple objects (each object contains image path and caption)
 const temples = [
