@@ -61,3 +61,4 @@ if (temperatureCelsius <= 10 && windSpeedKmh > 4.8) {
     windchillElement.textContent = "N/A";
 }
 //=======================================================================================
+
