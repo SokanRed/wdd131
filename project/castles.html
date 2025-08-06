@@ -9,6 +9,7 @@
 
     <link rel="stylesheet" href="styles/site.css">
     <script src="scripts/site.js" defer></script>
+    <script src="scripts/storageMonuments.js"></script>
 </head>
 
 <body>
@@ -20,19 +21,28 @@
                 <li class="dropdown">
                     <a href="#">Monuments</a>
                     <ul class="dropdown-menu">
-                        <li><a href="castles.html">Castles</a></li>
-                        <li><a href="cathedrals.html">Cathedrals</a></li>
-                        <li><a href="theatres.html">Theatres</a></li>
+                        <li><a href="castles.html">
+                                <img src="icons/castle.png" alt="" class="menu-icon"> Castles</a></li>
+                        <li><a href="cathedrals.html">
+                                <img src="icons/cathedral.png" alt="" class="menu-icon"> Cathedrals</a></li>
+                        <li><a href="theatres.html">
+                                <img src="icons/theatre.png" alt="" class="menu-icon"> Theatres</a></li>
                     </ul>
                 </li>
+                <li><a href="map.html">Map</a></li>
                 <li class="dropdown">
                     <a href="#">Favorites</a>
                     <ul class="dropdown-menu">
-                        <li><a href="favorites.html">Favorites</a></li>
-                        <li><a href="visited.html">Visited</a></li>
-                        <li><a href="to-visit.html">To Visit</a></li>
+                        <li><a href="favorites.html">
+                                <img src="icons/favorite.png" alt="" class="menu-icon"> Favorites</a></li>
+                        <li><a href="visited.html">
+                                <img src="icons/visited.png" alt="" class="menu-icon"> Visited</a></li>
+                        <li><a href="toVisit.html">
+                                <img src="icons/tovisit.png" alt="" class="menu-icon"> To Visit</a></li>
                     </ul>
                 </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="credits.html">Credits</a></li>
             </ul>
         </nav>
     </header>
@@ -46,7 +56,12 @@
             <!-- Cards will be populated by castles.js -->
         </section>
     </main>
+    
     <footer class="footer container">
+        <p>
+            <a href="contact.html">Contact</a> |
+            <a href="credits.html">Credits & References</a>
+        </p>
         <p>&#169; <span id="copyright-year"></span> - Denis PC Poussard - France</p>
         <p id="lastModified"></p>
     </footer>

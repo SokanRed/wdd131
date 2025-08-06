@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>To Visit Monuments</title>
+
+    <link rel="stylesheet" href="styles/site.css">
+    <script src="scripts/site.js" defer></script>
+    <style>
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 1rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .list-item {
+            padding: 0.5rem;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container">
+        <nav>
+            <div class="logo">Historic Architecture</div>
+            <ul class="nav-menu">
+                <li><a href="homePage.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Monuments</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="castles.html">
+                                <img src="icons/castle.png" alt="" class="menu-icon"> Castles</a></li>
+                        <li><a href="cathedrals.html">
+                                <img src="icons/cathedral.png" alt="" class="menu-icon"> Cathedrals</a></li>
+                        <li><a href="theatres.html">
+                                <img src="icons/theatre.png" alt="" class="menu-icon"> Theatres</a></li>
+                    </ul>
+                </li>
+                <li><a href="map.html">Map</a></li>
+                <li class="dropdown">
+                    <a href="#">Favorites</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="favorites.html">
+                                <img src="icons/favorite.png" alt="" class="menu-icon"> Favorites</a></li>
+                        <li><a href="visited.html">
+                                <img src="icons/visited.png" alt="" class="menu-icon"> Visited</a></li>
+                        <li><a href="toVisit.html">
+                                <img src="icons/tovisit.png" alt="" class="menu-icon"> To Visit</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="credits.html">Credits</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Monuments To Visit</h1>
+        <div id="toVisitContainer"></div>
+    </main>
+
+    <footer class="footer container">
+        <p>
+            <a href="contact.html">Contact</a> |
+            <a href="credits.html">Credits & References</a>
+        </p>
+        <p>&#169; <span id="copyright-year"></span> - Denis PC Poussard - France</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="scripts/storageMonuments.js"></script>
+    <script>
+        displayList('toVisit', 'toVisitContainer');
+    </script>
+</body>
+
+</html>

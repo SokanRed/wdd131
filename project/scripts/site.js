@@ -109,6 +109,8 @@ const castles = [
     {
         name: "Château de Chambord",
         location: "Loir-et-Cher, France",
+        lat: 47.6161,
+        lng: 1.5163,
         date: "1519 - 1547",
         architect: "Domenico da Cortona",
         style: "French Renaissance",
@@ -118,6 +120,8 @@ const castles = [
     {
         name: "Edinburgh Castle",
         location: "Edinburgh, Scotland",
+        lat: 55.9486,
+        lng: -3.1999,
         date: "12th century - present",
         architect: "Various",
         style: "Medieval, Gothic",
@@ -127,6 +131,8 @@ const castles = [
     {
         name: "Alhambra",
         location: "Granada, Spain",
+        lat: 37.1761,
+        lng: -3.5881,
         date: "13th - 15th century",
         architect: "Nasrid dynasty",
         style: "Islamic, Moorish",
@@ -136,6 +142,8 @@ const castles = [
     {
         name: "Bojnice Castle",
         location: "Bojnice, Slovakia",
+        lat: 48.7817,
+        lng: 18.5772,
         date: "12th century - 20th century",
         architect: "Ján Pálffy",
         style: "Romantic, Gothic Revival",
@@ -145,6 +153,8 @@ const castles = [
     {
         name: "Arundel Castle",
         location: "West Sussex, England",
+        lat: 50.8549,
+        lng: -0.5569,
         date: "11th century",
         architect: "Roger de Montgomery",
         style: "Norman, Gothic Revival",
@@ -154,6 +164,8 @@ const castles = [
     {
         name: "Hever Castle",
         location: "Kent, England",
+        lat: 51.1869,
+        lng: 0.1133,
         date: "13th century",
         architect: "Unknown",
         style: "Tudor",
@@ -163,6 +175,8 @@ const castles = [
     {
         name: "Bran Castle",
         location: "Bran, Romania",
+        lat: 45.5156,
+        lng: 25.3670,
         date: "1377",
         architect: "Unknown",
         style: "Medieval",
@@ -172,6 +186,8 @@ const castles = [
     {
         name: "Leeds Castle",
         location: "Kent, England",
+        lat: 51.2470,
+        lng: 0.6305,
         date: "1119",
         architect: "Robert de Crèvecœur",
         style: "Medieval / Tudor",
@@ -191,23 +207,85 @@ function displayIntroCastlesContent() {
 
 function displayCastlesCards(data) {
     const container = document.getElementById("castles-list");
+    container.innerHTML = ""; // Clear before adding
+
     data.forEach(item => {
         const card = document.createElement("div");
         card.className = "card";
-        card.innerHTML = `
-            <img src="${item.image}" alt="${item.name}">
-            <div class="card-content">
-                <h2>${item.name}</h2>
-                <p><strong>Location:</strong> ${item.location}</p>
-                <p><strong>Date:</strong> ${item.date}</p>
-                <p><strong>Architect/Patron:</strong> ${item.architect}</p>
-                <p><strong>Style:</strong> ${item.style}</p>
-                <p><strong>Classification:</strong> ${item.classification}</p>
-            </div>
-        `;
+
+        const img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.name;
+        card.appendChild(img);
+
+        const content = document.createElement("div");
+        content.className = "card-content";
+
+        const title = document.createElement("h2");
+        title.textContent = item.name;
+        content.appendChild(title);
+
+        const locationP = document.createElement("p");
+        locationP.innerHTML = `<strong>Location:</strong> 
+            <a href="map.html?lat=${item.lat}&lng=${item.lng}" target="_blank">${item.location}</a>`;
+        content.appendChild(locationP);
+
+        const dateP = document.createElement("p");
+        dateP.innerHTML = `<strong>Date:</strong> ${item.date}`;
+        content.appendChild(dateP);
+
+        const archP = document.createElement("p");
+        archP.innerHTML = `<strong>Architect/Patron:</strong> ${item.architect}`;
+        content.appendChild(archP);
+
+        const styleP = document.createElement("p");
+        styleP.innerHTML = `<strong>Style:</strong> ${item.style}`;
+        content.appendChild(styleP);
+
+        const classP = document.createElement("p");
+        classP.innerHTML = `<strong>Classification:</strong> ${item.classification}`;
+        content.appendChild(classP);
+
+        const iconBar = document.createElement("div");
+        iconBar.className = "icon-bar";
+
+        const favIcon = document.createElement("img");
+        favIcon.src = "icons/favorite.png";
+        favIcon.alt = "Add to Favorites";
+        favIcon.title = "Add to Favorites";
+        favIcon.className = "icon-btn";
+        favIcon.addEventListener("click", () => {
+            addToFavorites(item.name, item.image, item.location);
+        });
+
+        const visitedIcon = document.createElement("img");
+        visitedIcon.src = "icons/visited.png";
+        visitedIcon.alt = "Mark as Visited";
+        visitedIcon.title = "Mark as Visited";
+        visitedIcon.className = "icon-btn";
+        visitedIcon.addEventListener("click", () => {
+            addToVisited(item.name, item.image, item.location);
+        });
+
+        const toVisitIcon = document.createElement("img");
+        toVisitIcon.src = "icons/tovisit.png";
+        toVisitIcon.alt = "Add to To Visit";
+        toVisitIcon.title = "Add to To Visit";
+        toVisitIcon.className = "icon-btn";
+        toVisitIcon.addEventListener("click", () => {
+            addToToVisit(item.name, item.image, item.location);
+        });
+
+        iconBar.appendChild(favIcon);
+        iconBar.appendChild(visitedIcon);
+        iconBar.appendChild(toVisitIcon);
+
+        content.appendChild(iconBar);
+        card.appendChild(content);
         container.appendChild(card);
     });
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
     displayIntroCastlesContent();
@@ -233,6 +311,8 @@ const cathedrals = [
     {
         name: "Notre-Dame de Paris",
         location: "Paris, France",
+        lat: 48.8530,
+        lng: 2.3499,
         date: "1163 - 1345",
         architect: "Jean de Chelles / Pierre de Montreuil",
         style: "French Gothic",
@@ -242,6 +322,8 @@ const cathedrals = [
     {
         name: "Milan Cathedral (Duomo di Milano)",
         location: "Milan, Italy",
+        lat: 45.4642,
+        lng: 9.1916,
         date: "1386 - 1965",
         architect: "Simone da Orsenigo and others",
         style: "Italian Gothic",
@@ -251,6 +333,8 @@ const cathedrals = [
     {
         name: "St. Paul's Cathedral",
         location: "London, England",
+        lat: 51.5138,
+        lng: -0.0984,
         date: "1675 - 1710",
         architect: "Sir Christopher Wren",
         style: "English Baroque",
@@ -260,6 +344,8 @@ const cathedrals = [
     {
         name: "Reims Cathedral",
         location: "Reims, France",
+        lat: 49.2539,
+        lng: 4.0347,
         date: "1211 - 1275",
         architect: "Jean d'Orbais",
         style: "Gothic",
@@ -269,6 +355,8 @@ const cathedrals = [
     {
         name: "Barcelona Cathedral",
         location: "Barcelona, Spain",
+        lat: 41.3839,
+        lng: 2.1760,
         date: "1298 - 1420",
         architect: "Arnau Bargués",
         style: "Catalan Gothic",
@@ -278,6 +366,8 @@ const cathedrals = [
     {
         name: "Seville Cathedral",
         location: "Seville, Spain",
+        lat: 37.3861,
+        lng: -5.9922,
         date: "1401 - 1528",
         architect: "Charles Galter, Alonso Martínez",
         style: "Gothic, Renaissance",
@@ -287,6 +377,8 @@ const cathedrals = [
     {
         name: "Cologne Cathedral",
         location: "Cologne, Germany",
+        lat: 50.9413,
+        lng: 6.9583,
         date: "1248 - 1880",
         architect: "Master Gerhard",
         style: "Gothic",
@@ -296,6 +388,8 @@ const cathedrals = [
     {
         name: "St. Stephen's Cathedral",
         location: "Vienna, Austria",
+        lat: 48.2082,
+        lng: 16.3738,
         date: "1137 - 1511",
         architect: "Anton Pilgram",
         style: "Romanesque, Gothic",
@@ -315,23 +409,85 @@ function displayIntroCathedralsContent() {
 
 function displayCathedralsCards(data) {
     const container = document.getElementById("cathedrals-list");
+    container.innerHTML = ""; // Clear before adding
+
     data.forEach(item => {
         const card = document.createElement("div");
         card.className = "card";
-        card.innerHTML = `
-      <img src="${item.image}" alt="${item.name}">
-      <div class="card-content">
-        <h2>${item.name}</h2>
-        <p><strong>Location:</strong> ${item.location}</p>
-        <p><strong>Date:</strong> ${item.date}</p>
-        <p><strong>Architect/Patron:</strong> ${item.architect}</p>
-        <p><strong>Style:</strong> ${item.style}</p>
-        <p><strong>Classification:</strong> ${item.classification}</p>
-      </div>
-    `;
+
+        const img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.name;
+        card.appendChild(img);
+
+        const content = document.createElement("div");
+        content.className = "card-content";
+
+        const title = document.createElement("h2");
+        title.textContent = item.name;
+        content.appendChild(title);
+
+        const locationP = document.createElement("p");
+        locationP.innerHTML = `<strong>Location:</strong> 
+            <a href="map.html?lat=${item.lat}&lng=${item.lng}" target="_blank">${item.location}</a>`;
+        content.appendChild(locationP);
+
+        const dateP = document.createElement("p");
+        dateP.innerHTML = `<strong>Date:</strong> ${item.date}`;
+        content.appendChild(dateP);
+
+        const archP = document.createElement("p");
+        archP.innerHTML = `<strong>Architect/Patron:</strong> ${item.architect}`;
+        content.appendChild(archP);
+
+        const styleP = document.createElement("p");
+        styleP.innerHTML = `<strong>Style:</strong> ${item.style}`;
+        content.appendChild(styleP);
+
+        const classP = document.createElement("p");
+        classP.innerHTML = `<strong>Classification:</strong> ${item.classification}`;
+        content.appendChild(classP);
+
+        const iconBar = document.createElement("div");
+        iconBar.className = "icon-bar";
+
+        const favIcon = document.createElement("img");
+        favIcon.src = "icons/favorite.png";
+        favIcon.alt = "Add to Favorites";
+        favIcon.title = "Add to Favorites";
+        favIcon.className = "icon-btn";
+        favIcon.addEventListener("click", () => {
+            addToFavorites(item.name, item.image, item.location);
+        });
+
+        const visitedIcon = document.createElement("img");
+        visitedIcon.src = "icons/visited.png";
+        visitedIcon.alt = "Mark as Visited";
+        visitedIcon.title = "Mark as Visited";
+        visitedIcon.className = "icon-btn";
+        visitedIcon.addEventListener("click", () => {
+            addToVisited(item.name, item.image, item.location);
+        });
+
+        const toVisitIcon = document.createElement("img");
+        toVisitIcon.src = "icons/tovisit.png";
+        toVisitIcon.alt = "Add to To Visit";
+        toVisitIcon.title = "Add to To Visit";
+        toVisitIcon.className = "icon-btn";
+        toVisitIcon.addEventListener("click", () => {
+            addToToVisit(item.name, item.image, item.location);
+        });
+
+        iconBar.appendChild(favIcon);
+        iconBar.appendChild(visitedIcon);
+        iconBar.appendChild(toVisitIcon);
+
+        content.appendChild(iconBar);
+        card.appendChild(content);
         container.appendChild(card);
     });
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
     displayIntroCathedralsContent();
@@ -356,6 +512,8 @@ const theatres = [
     {
         name: "Teatro alla Scala",
         location: "Milan, Italy",
+        lat: 45.4670,
+        lng: 9.1898,
         date: "1778",
         architect: "Giuseppe Piermarini",
         style: "Neoclassical",
@@ -365,6 +523,8 @@ const theatres = [
     {
         name: "Royal Opera House",
         location: "London, England",
+        lat: 51.5129,
+        lng: -0.1222,
         date: "1858 (rebuilt)",
         architect: "Edward Middleton Barry",
         style: "Victorian",
@@ -374,6 +534,8 @@ const theatres = [
     {
         name: "Opéra Garnier",
         location: "Paris, France",
+        lat: 48.8719,
+        lng: 2.3316,
         date: "1861 - 1875",
         architect: "Charles Garnier",
         style: "Beaux-Arts",
@@ -383,6 +545,8 @@ const theatres = [
     {
         name: "Opéra de Monte-Carlo",
         location: "Monte-Carlo, Monaco",
+        lat: 43.7396,
+        lng: 7.4276,
         date: "1879",
         architect: "Charles Garnier",
         style: "Beaux-Arts",
@@ -392,6 +556,8 @@ const theatres = [
     {
         name: "Nationaltheater Munich",
         location: "Munich, Germany",
+        lat: 48.1391,
+        lng: 11.5802,
         date: "1818 / rebuilt 1963",
         architect: "Karl von Fischer / Gerhard Graubner",
         style: "Neoclassical",
@@ -401,6 +567,8 @@ const theatres = [
     {
         name: "Staatsoper Vienna",
         location: "Vienna, Austria",
+        lat: 48.2028,
+        lng: 16.3686,
         date: "1869",
         architect: "Sicardsburg & van der Nüll",
         style: "Neo-Renaissance",
@@ -410,6 +578,8 @@ const theatres = [
     {
         name: "Magyar Állami Operaház",
         location: "Budapest, Hungary",
+        lat: 47.5022,
+        lng: 19.0582,
         date: "1884",
         architect: "Miklós Ybl",
         style: "Neo-Renaissance",
@@ -419,6 +589,8 @@ const theatres = [
     {
         name: "Gran Teatro La Fenice",
         location: "Venice, Italy",
+        lat: 45.4336,
+        lng: 12.3358,
         date: "1792 / rebuilt 2003",
         architect: "Gianantonio Selva",
         style: "Neoclassical",
@@ -438,23 +610,104 @@ function displayIntroTheatresContent() {
 
 function displayTheatresCards(data) {
     const container = document.getElementById("theatres-list");
+    container.innerHTML = ""; // Clear before adding
+
     data.forEach(item => {
+        // Create the main card
         const card = document.createElement("div");
         card.className = "card";
-        card.innerHTML = `
-            <img src="${item.image}" alt="${item.name}">
-            <div class="card-content">
-                <h2>${item.name}</h2>
-                <p><strong>Location:</strong> ${item.location}</p>
-                <p><strong>Date:</strong> ${item.date}</p>
-                <p><strong>Architect/Patron:</strong> ${item.architect}</p>
-                <p><strong>Style:</strong> ${item.style}</p>
-                <p><strong>Classification:</strong> ${item.classification}</p>
-            </div>
-        `;
+
+        // Monument image
+        const img = document.createElement("img");
+        img.src = item.image;
+        img.alt = item.name;
+        card.appendChild(img);
+
+        // Card content container
+        const content = document.createElement("div");
+        content.className = "card-content";
+
+        // Title
+        const title = document.createElement("h2");
+        title.textContent = item.name;
+        content.appendChild(title);
+
+        // Location
+        const locationP = document.createElement("p");
+        locationP.innerHTML = `<strong>Location:</strong> 
+            <a href="map.html?lat=${item.lat}&lng=${item.lng}" target="_blank">${item.location}</a>`;
+        content.appendChild(locationP);
+
+        // Date
+        const dateP = document.createElement("p");
+        dateP.innerHTML = `<strong>Date:</strong> ${item.date}`;
+        content.appendChild(dateP);
+
+        // Architect
+        const archP = document.createElement("p");
+        archP.innerHTML = `<strong>Architect/Patron:</strong> ${item.architect}`;
+        content.appendChild(archP);
+
+        // Style
+        const styleP = document.createElement("p");
+        styleP.innerHTML = `<strong>Style:</strong> ${item.style}`;
+        content.appendChild(styleP);
+
+        // Classification
+        const classP = document.createElement("p");
+        classP.innerHTML = `<strong>Classification:</strong> ${item.classification}`;
+        content.appendChild(classP);
+
+        // Icon bar container
+        const iconBar = document.createElement("div");
+        iconBar.className = "icon-bar";
+
+        // Favorite icon
+        const favIcon = document.createElement("img");
+        favIcon.src = "icons/favorite.png";
+        favIcon.alt = "Add to Favorites";
+        favIcon.title = "Add to Favorites";
+        favIcon.className = "icon-btn";
+        favIcon.addEventListener("click", () => {
+            addToFavorites(item.name, item.image, item.location);
+        });
+
+        // Visited icon
+        const visitedIcon = document.createElement("img");
+        visitedIcon.src = "icons/visited.png";
+        visitedIcon.alt = "Mark as Visited";
+        visitedIcon.title = "Mark as Visited";
+        visitedIcon.className = "icon-btn";
+        visitedIcon.addEventListener("click", () => {
+            addToVisited(item.name, item.image, item.location);
+        });
+
+        // To Visit icon
+        const toVisitIcon = document.createElement("img");
+        toVisitIcon.src = "icons/tovisit.png";
+        toVisitIcon.alt = "Add to To Visit";
+        toVisitIcon.title = "Add to To Visit";
+        toVisitIcon.className = "icon-btn";
+        toVisitIcon.addEventListener("click", () => {
+            addToToVisit(item.name, item.image, item.location);
+        });
+
+        // Append icons to bar
+        iconBar.appendChild(favIcon);
+        iconBar.appendChild(visitedIcon);
+        iconBar.appendChild(toVisitIcon);
+
+        // Append icon bar to content
+        content.appendChild(iconBar);
+
+        // Append content to card
+        card.appendChild(content);
+
+        // Append card to container
         container.appendChild(card);
     });
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
     displayIntroTheatresContent();
