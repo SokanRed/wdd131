@@ -76,4 +76,7 @@ function addToToVisit(monumentName, monumentImage, monumentLocation) {
     }
 }
 
+displayList('favorites', 'favoritesContainer');
+displayList('visited', 'visitedContainer');
+displayList('toVisit', 'toVisitContainer');
 
