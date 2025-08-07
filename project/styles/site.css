@@ -43,6 +43,12 @@ header {
     padding-bottom: 1rem;
 }
 
+.logo h1 {
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 0;
+}
+
 nav {
     background-color: var(--primary-color);
     padding: 0;

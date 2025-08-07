@@ -115,6 +115,7 @@ const categories = [
 
 function displayIntroContent() {
     const intro = document.getElementById("intro-section");
+    if (!intro) return;
 
     intro.innerHTML = `
     <h1>${introContent.title}</h1>
@@ -124,6 +125,7 @@ function displayIntroContent() {
 
 function displayCategoryCards() {
     const container = document.getElementById("category-cards");
+    if (!container) return;
 
     categories.forEach(category => {
         const card = document.createElement("div");
@@ -248,6 +250,7 @@ const castles = [
 
 function displayIntroCastlesContent() {
     const intro = document.getElementById("introCastlesSection");
+    if (!intro) return;
 
     intro.innerHTML = `
     <h1>${introCastlesContent.title}</h1>
@@ -257,6 +260,7 @@ function displayIntroCastlesContent() {
 
 function displayCastlesCards(data) {
     const container = document.getElementById("castles-list");
+    if (!container) return;
     container.innerHTML = ""; // Clear before adding
 
     data.forEach(item => {
@@ -451,6 +455,7 @@ const cathedrals = [
 
 function displayIntroCathedralsContent() {
     const intro = document.getElementById("introCathedralsSection");
+    if (!intro) return;
 
     intro.innerHTML = `
     <h1>${introCathedralsContent.title}</h1>
@@ -460,6 +465,7 @@ function displayIntroCathedralsContent() {
 
 function displayCathedralsCards(data) {
     const container = document.getElementById("cathedrals-list");
+    if (!container) return;
     container.innerHTML = ""; // Clear before adding
 
     data.forEach(item => {
@@ -653,6 +659,7 @@ const theatres = [
 
 function displayIntroTheatresContent() {
     const intro = document.getElementById("introTheatresSection");
+    if (!intro) return;
 
     intro.innerHTML = `
     <h1>${introTheatresContent.title}</h1>
@@ -662,6 +669,7 @@ function displayIntroTheatresContent() {
 
 function displayTheatresCards(data) {
     const container = document.getElementById("theatres-list");
+    if (!container) return;
     container.innerHTML = ""; // Clear before adding
 
     data.forEach(item => {
@@ -810,6 +818,7 @@ const credits = [
 
 function displayIntroCreditsContent() {
     const intro = document.getElementById("introCreditsSection");
+    if (!intro) return;
 
     intro.innerHTML = `
     <h1>${introCreditsContent.title}</h1>
@@ -830,10 +839,6 @@ credits.forEach(item => {
 });
 //============================= Credits =======================================================
 
-//============================= Contact =======================================================
-
-//============================= Contact =======================================================
-
 //============================= Contact Answer ================================================
 const contactAnswerContent = {
     title: "Thank You for Contacting Us!",
@@ -842,6 +847,7 @@ const contactAnswerContent = {
 
 function displayContactAnswerContent() {
     const intro = document.getElementById("contactAnswerSection");
+    if (!intro) return;
 
     intro.innerHTML = `
     <h1>${contactAnswerContent.title}</h1>
