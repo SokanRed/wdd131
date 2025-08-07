@@ -31,6 +31,56 @@ const formattedDate = `${month}/${day}/${year} - ${hours}:${minutes}:${seconds}`
 document.getElementById('lastModified').textContent = `Last modified: ${formattedDate}`;
 // ============Display Last Modification Date and Time in Footer Using JavaScript========
 
+//============================ Navigation Bar Page Active Gestion =====================
+// Get the current page filename, removing any query parameters
+const urlPath = window.location.pathname;
+const currentPage = urlPath.substring(urlPath.lastIndexOf("/") + 1).split("?")[0];
+
+// Select all navigation links
+const navLinks = document.querySelectorAll(".nav-menu a");
+navLinks.forEach(link => {
+    const href = link.getAttribute("href");
+    // Skip empty, "#" or JavaScript links
+    if (!href || href === "#" || href.startsWith("javascript")) return;
+
+    // Remove any query parameters from the href
+    const hrefClean = href.split("?")[0];
+
+    // Compare the link's href to the current page
+    if (hrefClean === currentPage) {
+        link.classList.add("active");
+
+        // If the link is inside a dropdown, also highlight its parent
+        const dropdownMenu = link.closest(".dropdown-menu");
+        if (dropdownMenu) {
+            const mainDropdownLink = dropdownMenu.previousElementSibling;
+            if (mainDropdownLink) {
+                mainDropdownLink.classList.add("active");
+            }
+        }
+    }
+});
+//============================ Navigation Bar Pacge Active Gestion ===========================
+
+//================================ Responsive Menu ===========================================
+const menuBtn = document.getElementById('menu');
+const navMenu = document.querySelector('.nav-menu');
+
+menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('open');
+    navMenu.classList.toggle('show');
+});
+
+// Optional: prevent dropdowns from opening on hover in mobile
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        const parent = this.parentElement;
+        parent.classList.toggle('open');
+        e.preventDefault();
+    });
+});
+//================================ Responsive Menu ===========================================
+
 //============================= introduction Contain ==========================================
 const introContent = {
     title: "Welcome to Historic European Architecture",
@@ -80,7 +130,7 @@ function displayCategoryCards() {
         card.className = "card";
 
         card.innerHTML = `
-      <img src="${category.image}" alt="${category.title}">
+      <img src="${category.image}" alt="${category.title}" loading="lazy">
       <h2>${category.title}</h2>
       <p>${category.description}</p>
       <a href="${category.link}">Explore ${category.title}</a>
@@ -216,6 +266,7 @@ function displayCastlesCards(data) {
         const img = document.createElement("img");
         img.src = item.image;
         img.alt = item.name;
+        img.loading = "lazy";
         card.appendChild(img);
 
         const content = document.createElement("div");
@@ -418,6 +469,7 @@ function displayCathedralsCards(data) {
         const img = document.createElement("img");
         img.src = item.image;
         img.alt = item.name;
+        img.loading = "lazy";
         card.appendChild(img);
 
         const content = document.createElement("div");
@@ -621,6 +673,7 @@ function displayTheatresCards(data) {
         const img = document.createElement("img");
         img.src = item.image;
         img.alt = item.name;
+        img.loading = "lazy";
         card.appendChild(img);
 
         // Card content container

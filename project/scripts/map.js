@@ -53,7 +53,7 @@ monuments.forEach(m => {
     const marker = L.marker([m.lat, m.lng], { icon: icons[m.type] })
         .bindPopup(`
       <div class="popup-card">
-        <img src="${m.image}" alt="${m.name}">
+        <img src="${m.image}" alt="${m.name}" loading = "lazy">
         <h3>${m.name}</h3>
         <p><strong>Location:</strong> ${m.location}</p>
         <p>${m.description}</p>

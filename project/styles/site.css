@@ -14,7 +14,7 @@
 body {
     height: 100%;
     font-family: Georgia, serif;
-    background-color: var(--bg-color);
+    background-color: #eeebd8;
     color: var(--text-color);
     line-height: 1.6;
     ;
@@ -27,87 +27,198 @@ body {
     border: 1px solid var(--primary-color); 
 }
 
+/*=========== Header Nav Bar==========================*/
 header {
     background-color: var(--primary-color);
     padding: 1rem;
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
+    padding-bottom: 1rem;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.menu-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 6px;
-    vertical-align: middle;
-}
-
-nav a {
-    display: inline-flex;
-    align-items: center;
+    background-color: var(--primary-color);
+    padding: 0;
 }
 
 .nav-menu {
     list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
     gap: 1rem;
 }
 
-.nav-menu a {
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu>li>a {
     color: white;
     text-decoration: none;
     padding: 0.5rem 1rem;
+    display: inline-block;
 }
 
 .nav-menu a:hover {
     color: var(--primary-color);
     background-color: yellow;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.nav-menu a.active {
-    color: var(--primary-color);
-    background-color: lightyellow;
-    font-weight: bold;
     border-radius: 4px;
-    padding: 5px 10px;
 }
-
-.dropdown {
-    position: relative;
+.nav-menu a.active,
+.nav-menu a.active .arrow {
+    color: var(--primary-color);
+    background-color: #eeebd8;
+    border-radius: 4px;
 }
 
 .dropdown-menu {
-    display: none;
     position: absolute;
+    top: 100%;
+    /* directly under parent */
+    left: 0;
     background-color: var(--primary-color);
-    list-style: none;
-    margin-top: 0.5rem;
+    display: none;
+    min-width: 200px;
+    z-index: 999;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     padding: 0.5rem 0;
 }
 
-.dropdown:hover .dropdown-menu {
+.arrow {
+    color: white;
+    font-size: 0.6rem;
+    margin-left: 5px;
+}
+
+.dropdown-menu li a {
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+    color: var(--primary-color);
+    background-color: yellow;
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* show menu on hover */
+.nav-menu li.dropdown:hover .dropdown-menu {
     display: block;
 }
 
-.dropdown-menu li {
-    padding: 0.5rem 1rem;
+/* Prevent the menu from disappearing too quickly */
+.nav-menu li.dropdown {
+    padding-bottom: 0.5rem;
+}
+/*=========== Header Nav Bar==========================*/
+
+/*==============Responsive Menu ======================*/
+/* Hide menu button on desktop */
+.nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
-.dropdown-menu a {
-    color: white;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
+
+.logoIcon {
+    height: 40px;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* Show hamburger menu under 600px */
+@media (max-width: 700px) {
+    #menu {
+        display: block;
+    }
+
+    nav .nav-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        /* or your nav background */
+        width: 100%;
+    }
+
+    nav .nav-menu.show {
+        display: flex;
+    }
+
+    nav .nav-menu li {
+        margin: 0;
+        padding: 1rem;
+        border-top: 1px solid #444;
+    }
+
+    .dropdown-menu {
+        position: static;
+        display: none;
+        background-color: #444;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+        /* disable hover dropdown on mobile */
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+}
+
+/* Icon logic */
+#menu::before {
+    content: "☰";
+    display: inline-block;
+    color: inherit;
+}
+
+#menu.open::before {
+    content: "❎";
+}
+/*==============Responsive Menu ======================*/
 
 main {
     background-color: var(--bg-color);
@@ -118,17 +229,15 @@ main {
     padding: 2rem 1rem;
 }
 
-.category-cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 2rem 0;
-}
-
+.category-cards,
 .card-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
+}
+
+.category-cards {
+    padding: 2rem 0;
 }
 
 .category-cards a {
@@ -144,25 +253,23 @@ main {
 }
 
 .category-cards a:hover {
-    background-color: var(--primary-color);
+    background-color: white;
+    border: 1px solid var(--primary-color);
 }
 
-@media (min-width: 700px) {
-    .category-cards {
-        grid-template-columns: repeat(3, 1fr);
-    }
+/* Tablet: ≥ 600px — 2 cards */
+@media (min-width: 600px) {
+    .category-cards,
     .card-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 699px) {
-    .category-cards {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+/* Desktop: ≥ 900px — 3 cards */
+@media (min-width: 900px) {
+    .category-cards,
     .card-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -183,7 +290,6 @@ main {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border: 1px solid var(--primary-color);
     border-radius: 4px;
 }
 
@@ -350,7 +456,9 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: var(--primary-color);
+    color: var(--primary-color);
+    background-color: white;
+    border: 1px solid var(--primary-color);
 }
 /*========================== Contact ==========================*/
 
@@ -435,7 +543,12 @@ input[type="submit"]:hover {
  .credit-card a:hover {
      text-decoration: underline;
  }
-/*=====================================================================*/
+
+ .credit-card a:visited {
+     color: green;
+ }
+
+/*======================= Credits Page ========================*/
 
 /*=======Footer============*/
 footer {
@@ -448,3 +561,4 @@ footer a {
     color: #ddd;
     text-decoration: underline;
 }
+/*=======Footer============*/
