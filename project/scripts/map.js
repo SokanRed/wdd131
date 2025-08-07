@@ -26,19 +26,19 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 // Custom icons
 const icons = {
     cathedral: L.icon({
-        iconUrl: 'icons/cathedral.png',
+        iconUrl: 'icons/cathedral.webp',
         iconSize: [30, 30],
         iconAnchor: [15, 30],
         popupAnchor: [0, -28]
     }),
     castle: L.icon({
-        iconUrl: 'icons/castle.png',
+        iconUrl: 'icons/castle.webp',
         iconSize: [30, 30],
         iconAnchor: [15, 30],
         popupAnchor: [0, -28]
     }),
     theatre: L.icon({
-        iconUrl: 'icons/theatre.png',
+        iconUrl: 'icons/theatre.webp',
         iconSize: [30, 30],
         iconAnchor: [15, 30],
         popupAnchor: [0, -28]

@@ -305,7 +305,7 @@ function displayCastlesCards(data) {
         iconBar.className = "icon-bar";
 
         const favIcon = document.createElement("img");
-        favIcon.src = "icons/favorite.png";
+        favIcon.src = "icons/favorite.webp";
         favIcon.alt = "Add to Favorites";
         favIcon.title = "Add to Favorites";
         favIcon.className = "icon-btn";
@@ -314,7 +314,7 @@ function displayCastlesCards(data) {
         });
 
         const visitedIcon = document.createElement("img");
-        visitedIcon.src = "icons/visited.png";
+        visitedIcon.src = "icons/visited.webp";
         visitedIcon.alt = "Mark as Visited";
         visitedIcon.title = "Mark as Visited";
         visitedIcon.className = "icon-btn";
@@ -323,7 +323,7 @@ function displayCastlesCards(data) {
         });
 
         const toVisitIcon = document.createElement("img");
-        toVisitIcon.src = "icons/tovisit.png";
+        toVisitIcon.src = "icons/tovisit.webp";
         toVisitIcon.alt = "Add to To Visit";
         toVisitIcon.title = "Add to To Visit";
         toVisitIcon.className = "icon-btn";
@@ -510,7 +510,7 @@ function displayCathedralsCards(data) {
         iconBar.className = "icon-bar";
 
         const favIcon = document.createElement("img");
-        favIcon.src = "icons/favorite.png";
+        favIcon.src = "icons/favorite.webp";
         favIcon.alt = "Add to Favorites";
         favIcon.title = "Add to Favorites";
         favIcon.className = "icon-btn";
@@ -519,7 +519,7 @@ function displayCathedralsCards(data) {
         });
 
         const visitedIcon = document.createElement("img");
-        visitedIcon.src = "icons/visited.png";
+        visitedIcon.src = "icons/visited.webp";
         visitedIcon.alt = "Mark as Visited";
         visitedIcon.title = "Mark as Visited";
         visitedIcon.className = "icon-btn";
@@ -528,7 +528,7 @@ function displayCathedralsCards(data) {
         });
 
         const toVisitIcon = document.createElement("img");
-        toVisitIcon.src = "icons/tovisit.png";
+        toVisitIcon.src = "icons/tovisit.webp";
         toVisitIcon.alt = "Add to To Visit";
         toVisitIcon.title = "Add to To Visit";
         toVisitIcon.className = "icon-btn";
@@ -725,7 +725,7 @@ function displayTheatresCards(data) {
 
         // Favorite icon
         const favIcon = document.createElement("img");
-        favIcon.src = "icons/favorite.png";
+        favIcon.src = "icons/favorite.webp";
         favIcon.alt = "Add to Favorites";
         favIcon.title = "Add to Favorites";
         favIcon.className = "icon-btn";
@@ -735,7 +735,7 @@ function displayTheatresCards(data) {
 
         // Visited icon
         const visitedIcon = document.createElement("img");
-        visitedIcon.src = "icons/visited.png";
+        visitedIcon.src = "icons/visited.webp";
         visitedIcon.alt = "Mark as Visited";
         visitedIcon.title = "Mark as Visited";
         visitedIcon.className = "icon-btn";
@@ -745,7 +745,7 @@ function displayTheatresCards(data) {
 
         // To Visit icon
         const toVisitIcon = document.createElement("img");
-        toVisitIcon.src = "icons/tovisit.png";
+        toVisitIcon.src = "icons/tovisit.webp";
         toVisitIcon.alt = "Add to To Visit";
         toVisitIcon.title = "Add to To Visit";
         toVisitIcon.className = "icon-btn";
