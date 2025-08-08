@@ -242,9 +242,7 @@ nav {
 .banner img {
     width: 100%;
     max-width: 1000px;
-    aspect-ratio: 4/3;
-    /* ou une valeur spécifique si souhaité */
-    height: auto;
+    aspect-ratio: 1000/250;    
     display: block;
     margin: 0 auto;
 }
