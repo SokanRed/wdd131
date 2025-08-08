@@ -157,7 +157,9 @@ nav {
 }
 
 .logoIcon {
+    width: 40px;
     height: 40px;
+    display: block;
 }
 
 .logo-text {
@@ -240,7 +242,9 @@ nav {
 .banner img {
     width: 100%;
     max-width: 1000px;
+    aspect-ratio: 4/3;
     /* ou une valeur spécifique si souhaité */
+    height: auto;
     display: block;
     margin: 0 auto;
 }
