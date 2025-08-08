@@ -240,11 +240,11 @@ nav {
 }
 
 .banner img {
+    display: block;
     width: 100%;
     max-width: 1000px;
-    aspect-ratio: 1000/250;    
-    display: block;
-    margin: 0 auto;
+    height: auto;
+    
 }
 /*============ Banner =======================*/
 
